@@ -1,0 +1,33 @@
+{
+    "name": "mr-linter/metrics-decorators",
+    "description": "Metrics Contracts",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "MrLinter\\Metrics\\Decorators\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "artarts36",
+            "email": "temicska99@mail.ru"
+        }
+    ],
+    "require": {
+        "php": "^8.2",
+        "psr/log": "^3.0",
+        "mr-linter/metrics-contracts": "^0.1.0"
+    },
+    "require-dev": {
+        "artarts36/php-cs-fixer-good-fixers": "^0.1.2"
+    },
+    "scripts": {
+        "lint": [
+            "php-cs-fixer fix --dry-run --verbose --diff --ansi"
+        ],
+        "lint-fix": [
+            "php-cs-fixer fix --verbose --diff --ansi"
+        ]
+    }
+}
