@@ -68,4 +68,9 @@ final class SilentManager implements Manager
             ]);
         }
     }
+
+    public function read(): array
+    {
+        return $this->metrics->read();
+    }
 }

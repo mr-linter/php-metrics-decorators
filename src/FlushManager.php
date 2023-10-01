@@ -3,10 +3,8 @@
 namespace MrLinter\Metrics\Decorators;
 
 use MrLinter\Contracts\Metrics\Manager;
-use MrLinter\Contracts\Metrics\Reader;
-use MrLinter\Contracts\Metrics\MetricsException;
 
-final class FlushManager implements Manager, Reader
+final class FlushManager implements Manager
 {
     public function __construct(
         private readonly Manager $metrics,
@@ -46,14 +44,6 @@ final class FlushManager implements Manager, Reader
 
     public function read(): array
     {
-        if (! $this->metrics instanceof Reader) {
-            throw new MetricsException(sprintf(
-                'Class "%s" not implemented %s',
-                $this->metrics::class,
-                Reader::class,
-            ));
-        }
-
         return $this->metrics->read();
     }
 }

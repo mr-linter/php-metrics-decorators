@@ -3,11 +3,10 @@
 namespace MrLinter\Metrics\Decorators;
 
 use MrLinter\Contracts\Metrics\Manager;
-use MrLinter\Contracts\Metrics\Reader;
 use Psr\Log\LoggerInterface;
 use MrLinter\Contracts\Metrics\MetricsException;
 
-final class RetryManager implements Manager, Reader
+final class RetryManager implements Manager
 {
     public function __construct(
         private readonly Manager $manager,
@@ -70,14 +69,6 @@ final class RetryManager implements Manager, Reader
 
     public function read(): array
     {
-        if (! $this->manager instanceof Reader) {
-            throw new MetricsException(sprintf(
-                'Class "%s" not implemented %s',
-                $this->manager::class,
-                Reader::class,
-            ));
-        }
-
         return $this->manager->read();
     }
 }

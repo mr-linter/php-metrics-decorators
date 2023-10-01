@@ -17,7 +17,7 @@
     "require": {
         "php": "^8.2",
         "psr/log": "^3.0",
-        "mr-linter/metrics-contracts": "^0.1.0"
+        "mr-linter/metrics-contracts": "^0.3.0"
     },
     "require-dev": {
         "artarts36/php-cs-fixer-good-fixers": "^0.1.2"
